@@ -1,5 +1,5 @@
 NAME = dockerbase/kibana
-VERSION = 1.0
+VERSION = 1.1
 
 .PHONY: all build test tag_latest release ssh
 
@@ -27,6 +27,7 @@ rm:
 version:
 	docker run -it --rm $(NAME):$(VERSION) sh -c " lsb_release -d ; git --version ; ssh -V " | tee COMPONENTS
 	docker run -it --rm $(NAME):$(VERSION) sh -c " javac -version ; java -version " | tee -a COMPONENTS
+	docker run -it --rm $(NAME):$(VERSION) sh -c " ls  -d /usr/local/elasticsearch-* | cut -d / -f 4 | tr - ':' " | tee -a COMPONENTS
 	docker run -it --rm $(NAME):$(VERSION) sh -c " ls  -d /usr/local/kibana-* | cut -d / -f 4 | tr - ':' " | tee -a COMPONENTS
 	dos2unix COMPONENTS
 	sed -i -e 's/^/    /' COMPONENTS

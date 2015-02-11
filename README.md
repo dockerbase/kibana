@@ -6,7 +6,7 @@ This repository contains **Dockerbase** of [Elasticsearch](http://www.elasticsea
 
 ### Depends on:
 
-* [dockerbase/service-java8](https://registry.hub.docker.com/u/dockerbase/service-java8)
+* [dockerbase/elasticsearch](https://registry.hub.docker.com/u/dockerbase/elasticsearch)
 
 
 ### Installation
@@ -29,4 +29,5 @@ This repository contains **Dockerbase** of [Elasticsearch](http://www.elasticsea
     java version "1.8.0_20"
     Java(TM) SE Runtime Environment (build 1.8.0_20-b26)
     Java HotSpot(TM) 64-Bit Server VM (build 25.20-b23, mixed mode)
+    elasticsearch:1.4.2
     kibana:4.0.0:beta3
